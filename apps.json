@@ -1,0 +1,26 @@
+{
+  "name": "FMLAB",
+  "identifier": "fmlab.quantswarm.source",
+  "sourceURL": "https://raw.githubusercontent.com/cipherdesk007-max/quantswarm-releases/main/apps.json",
+  "apps": [
+    {
+      "name": "QuantSwarm Alpha Zero",
+      "bundleIdentifier": "com.quantswarm.alphazero",
+      "developerName": "FMLAB",
+      "subtitle": "Trading con agenti AI su Alpaca",
+      "iconURL": "https://raw.githubusercontent.com/cipherdesk007-max/quantswarm-releases/main/icon.png",
+      "localizedDescription": "Agenti Kimi scelgono, le regole proteggono, Alpaca esegue.",
+      "versions": [
+        {
+          "version": "1.5.0",
+          "buildVersion": "172",
+          "date": "2026-11-12T20:20:07Z",
+          "localizedDescription": "Vedi CHANGELOG.md\n\n\nBuild 172 · commit 7611154dbf3579b1e3b4658a4f1d87e423025bce",
+          "downloadURL": "https://github.com/cipherdesk007-max/quantswarm-releases/releases/download/v1.5.0/QuantSwarm-Alpha-Zero.ipa",
+          "size": 2198164,
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ]
+}
