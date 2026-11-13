@@ -12,6 +12,15 @@
       "localizedDescription": "Agenti Kimi scelgono, le regole proteggono, Alpaca esegue.",
       "versions": [
         {
+          "version": "1.6.4",
+          "buildVersion": "207",
+          "date": "2026-11-13T20:37:48Z",
+          "localizedDescription": "### Corretto (self-healing dello stop CRYPTO · 13/11/2026, revisione completa prima dei test paper)\n\n- **Una posizione CRYPTO non resta mai scoperta**: sul crypto Alpaca non esistono ordini bracket (422), quindi se lo stop protettivo GTC mancava la posizione restava senza protezione finché il chandelier non saliva. Capitava in tre modi: invio dello stop fallito subito dopo l'ingresso (rate-limit, rete), stop cancellato a mano sul broker, quantità cambiata per un fill parziale dello stop (quel ramo annullava lo stop vecchio e non lo rimetteva). Ora la riconciliazione di OGNI tick (60 s) ri-copre la posizione: posizione viva con stop assente o in stato terminale (filled/canceled/expired/rejected) → stop_limit GTC ri-inviato al livello chandelier del registro, sulla quantità attuale, con log \"stop protettivo RIPRISTINATO\" e notifica. Errore di rete sulla lettura dello stato: NESSUN doppio stop alla cieca, si considera vivo e si riprova al tick dopo.\n- **Il log non mente più all'ingresso**: se lo stop GTC veniva rifiutato subito dopo l'acquisto, il log e la notifica dicevano comunque \"stop sul broker\". Ora dicono che lo stop manca e che il prossimo ciclo lo ripristina (posizione scoperta per massimo 60 secondi, con avviso e notifica dedicata).\n- Test: **+5** (ingresso senza stop dichiarato per quello che è e riparato al ciclo dopo, stop mancante ripristinato al livello registrato, stop cancellato sul broker rimpiazzato senza doppie cancellazioni, quantità riallineata ri-coperta con lo stop giusto, errore di stato senza duplicati; i 267 della 1.6.3 diventano 272).\n\n\n\nBuild 207 · commit 36bc1d199cb25d747a6e4fae94a716b26c3d7fcd",
+          "downloadURL": "https://github.com/cipherdesk007-max/quantswarm-releases/releases/download/v1.6.4/QuantSwarm-Alpha-Zero.ipa",
+          "size": 2471510,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.6.3",
           "buildVersion": "203",
           "date": "2026-11-13T19:30:49Z",
