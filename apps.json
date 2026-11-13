@@ -12,6 +12,15 @@
       "localizedDescription": "Agenti Kimi scelgono, le regole proteggono, Alpaca esegue.",
       "versions": [
         {
+          "version": "1.6.6",
+          "buildVersion": "211",
+          "date": "2026-11-13T22:40:34Z",
+          "localizedDescription": "### Corretto (specialista NOTIZIE del consiglio: falsi positivi keyword · 13/11/2026, revisione completa del progetto)\n\n- **NewsSpecialist leggeva i titoli per sottostringa**: \"war\" matchava \"software\" e \"toward\", \"rate\" matchava \"moderate\", \"cut\" matchava \"haircut\"/\"shortcut\". Un titolo neutro poteva finire marcato come \"evento ad alto impatto\" o negativo nel report che Kimi Brain e Reviewer ricevono in TUTTE le modalità (parere del consiglio nella Veloce e digest della Giornaliera). Ora il matching è a confine di parola (regex `\\\\b`, case-insensitive), lo stesso metodo già usato dal filtro evento 48h: le parole chiave vere restano prese (\"rate cut\", \"Fed\", \"warning\"), i falsi positivi spariscono.\n- **Perché è un fix e non un cambio di strategia**: le regole di ingresso/uscita non cambiano; migliora la qualità dei dati di contesto che gli agenti locali passano a Kimi (meno rumore nel parere dello specialista notizie).\n- Test: **+2** (falsi positivi software/moderate respinti e resta neutro; parole chiave vere a confine di parola ancora prese; i 273 della 1.6.5 diventano 275).\n- Insieme (solo strumenti, nessun cambio in-app senza numeri): `tools/backtest_trend_crypto.py` esteso con lo **studio P2 pre-registrato** su cooldown dopo l'uscita e ingressi maker per la CRYPTO V4 (criteri di adozione dichiarati prima del run; esito documentato in docs/STATO.md e docs/PROPOSTE.md).\n\n\n\nBuild 211 · commit a33d955b6fdb26316ecd94478d73c4d52dc4ca22",
+          "downloadURL": "https://github.com/cipherdesk007-max/quantswarm-releases/releases/download/v1.6.6/QuantSwarm-Alpha-Zero.ipa",
+          "size": 2472688,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.6.5",
           "buildVersion": "209",
           "date": "2026-11-13T21:25:49Z",
