@@ -12,6 +12,15 @@
       "localizedDescription": "Agenti Kimi scelgono, le regole proteggono, Alpaca esegue.",
       "versions": [
         {
+          "version": "1.6.1",
+          "buildVersion": "199",
+          "date": "2026-11-13T06:17:36Z",
+          "localizedDescription": "Vedi CHANGELOG.md\n\n\nBuild 199 · commit 34b39667f61d4b2b60baf71086fb98aa54adc9ef",
+          "downloadURL": "https://github.com/cipherdesk007-max/quantswarm-releases/releases/download/v1.6.1/QuantSwarm-Alpha-Zero.ipa",
+          "size": 2446605,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.6.0",
           "buildVersion": "196",
           "date": "2026-11-13T04:52:02Z",
