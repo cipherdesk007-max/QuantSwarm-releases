@@ -12,6 +12,15 @@
       "localizedDescription": "Agenti Kimi scelgono, le regole proteggono, Alpaca esegue.",
       "versions": [
         {
+          "version": "1.6.5",
+          "buildVersion": "209",
+          "date": "2026-11-13T21:25:49Z",
+          "localizedDescription": "### Corretto (HARD KILL allinea i registri · 13/11/2026, dal report delle 21:49)\n\n- **HARD KILL azzerava il broker ma non i registri locali**: dopo l'HARD KILL delle 21:49 (ordini MOC cancellati, buying power tornato a 1000 USD) la ripartenza diceva ancora \"Notte: acquisti in chiusura di oggi già in coda: GLDM, QQQM, SPYM, VTWO\", e il ciclo notturno avrebbe saltato la ricompra della sera credendo quegli ordini ancora vivi. Ora, riuscita la cancellazione globale, l'app azzera dai registri tutto ciò che rappresentava il broker: posizioni e code d'asta della NOTTE, posizioni e stop d'ingresso della GIORNALIERA, posizioni della CRYPTO (log \"Registri allineati al conto piatto\" e notifica aggiornata). Se la cancellazione invece fallisce, i registri restano: è la riconciliazione dei cicli a sistemare.\n- **Resta la memoria, si perde solo il broker**: registro ombra e decisioni Kimi già pagate (la prova in ombra del filtro 48h non si cancella), contatore notti, picco drawdown crypto (la protezione non si azzera), barre già valutate.\n- Test: **+1** (hardKillBooks: via posizioni/stop/code, resta ombra/picco/contatori; i 272 della 1.6.4 diventano 273).\n\n\n\nBuild 209 · commit d6206c9bb62d43c3a4ffa6f287ddf08a3c80aa63",
+          "downloadURL": "https://github.com/cipherdesk007-max/quantswarm-releases/releases/download/v1.6.5/QuantSwarm-Alpha-Zero.ipa",
+          "size": 2472625,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.6.4",
           "buildVersion": "207",
           "date": "2026-11-13T20:37:48Z",
