@@ -12,6 +12,15 @@
       "localizedDescription": "Agenti Kimi scelgono, le regole proteggono, Alpaca esegue.",
       "versions": [
         {
+          "version": "1.6.3",
+          "buildVersion": "203",
+          "date": "2026-11-13T19:30:49Z",
+          "localizedDescription": "### Aggiunto (RIATTIVA TRADING in-app + secondo ciclo al lancio parato · 13/11/2026, da secondo report su telefono)\n- **La voce \"trades suspended\" del conto Alpaca si toglie DIRETTAMENTE dall'app**: il flag che fa rifiutare tutti gli ordini con 40310000 si legge con `GET /v2/account/configurations` e si modifica con `PATCH` sullo stesso endpoint (docs.alpaca.markets/us/reference/patchaccountconfig-1). Ora il CRUSCOTTO mostra un banner rosso \"TRADING SOSPESO sul conto Alpaca\" con il pulsante **RIATTIVA TRADING** che manda la PATCH senza uscire dall'app (stessa impostazione del pannello web); anche SISTEMA → Stato ha la riga e il pulsante. Il flag si verifica allo sblocco delle credenziali, a ogni ciclo (throttle 5 min) e appena un ordine viene rifiutato col 40310000, quindi il banner compare da solo. Dopo la riattivazione il controllo riparte subito se il motore gira.\n- **Secondo ciclo immediato al lancio PARATO**: nel report delle 19:44 la sessione PORTAFOGLIO ha girato DUE cicli a 25 s di distanza (righe PORTAFOGLIO raddoppiate). Causa: all'avvio la scena passa per inactive (sblocco Face ID) → active e quel \"rientro in foreground\" chiedeva un controllo immediato mentre il primo ciclo era appena partito. Ora il rientro scatena il controllo solo se la sessione gira da più di 60 s (i cicli sono comunque idempotenti per giorno e client_order_id, quindi nessun ordine duplicato).\n- **Il messaggio \"TRADING SOSPESO\" vale su TUTTE le modalità**: prima solo la NOTTE spiegava il 40310000; ora anche l'esecutore della GIORNALIERA (ingresso e ripristino stop) e la CRYPTO (ingresso e vendita) dicono cosa è il flag e come toglierlo dall'app, invece del JSON grezzo o di un generico \"rifiutato dal broker\". Il log è deduplicato a sessione (una volta, non una per ordine rifiutato) e la notifica indica il pulsante.\n- Test: **+6** (lettura del flag `suspend_trade` e nome storico, PATCH `suspend_trade=false`, campo assente = non verificato, rientro in foreground ignorato nel primo minuto di sessione, messaggio azionabile dell'esecutore giornaliero senza JSON grezzo; i 261 della 1.6.2 diventano 267).\n\n\n\nBuild 203 · commit 4680b78eb8a3fa5bd2e9819b57b7f6fef08852df",
+          "downloadURL": "https://github.com/cipherdesk007-max/quantswarm-releases/releases/download/v1.6.3/QuantSwarm-Alpha-Zero.ipa",
+          "size": 2462956,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.6.2",
           "buildVersion": "201",
           "date": "2026-11-13T15:47:08Z",
