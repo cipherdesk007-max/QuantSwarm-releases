@@ -13,11 +13,11 @@
       "versions": [
         {
           "version": "1.5.0",
-          "buildVersion": "181",
-          "date": "2026-11-12T22:59:42Z",
-          "localizedDescription": "Vedi CHANGELOG.md\n\n\nBuild 181 · commit 7b7cb81a2a05910c9a7689e9556939a61dde87a4",
+          "buildVersion": "183",
+          "date": "2026-11-13T00:06:26Z",
+          "localizedDescription": "Vedi CHANGELOG.md\n\n\nBuild 183 · commit a3df8e36baed7656b16afd7dd4d77f18c2a9751a",
           "downloadURL": "https://github.com/cipherdesk007-max/quantswarm-releases/releases/download/v1.5.0/QuantSwarm-Alpha-Zero.ipa",
-          "size": 2288264,
+          "size": 2294999,
           "minOSVersion": "17.0"
         }
       ]
